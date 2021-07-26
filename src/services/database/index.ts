@@ -1,6 +1,2 @@
-import Database from 'realm';
-import {TaskSchema} from './schemas/taskSchema';
-
-export const database = new Database({
-  schema: [TaskSchema],
-});
+export * from './repositories/taskRepository';
+export * from './schemas/taskSchema';

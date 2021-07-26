@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen, AddTasksScreen} from '../screens';
+import {taskActions} from '../store';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -10,6 +11,12 @@ export type RootStackParamList = {
 const RootStack = createStackNavigator<RootStackParamList>();
 
 export const RootStackNavigation = () => {
+  const {getTasks} = taskActions;
+
+  useEffect(() => {
+    getTasks();
+  }, [getTasks]);
+
   return (
     <RootStack.Navigator initialRouteName="Home" headerMode={'none'}>
       <RootStack.Screen name="Home" component={HomeScreen} />

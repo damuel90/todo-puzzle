@@ -10,13 +10,13 @@ export interface FieldProps {
 
 export const Field: React.FC<FieldProps> = ({label, children, style}) => {
   return (
-    <>
-      <View style={[{marginBottom: 10}, style]}>
+    <View style={style}>
+      <View style={{marginBottom: 10}}>
         <Typography isBold size={15}>
           {label}
         </Typography>
       </View>
       {children}
-    </>
+    </View>
   );
 };

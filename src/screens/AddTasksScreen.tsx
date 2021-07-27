@@ -1,10 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Text, StatusBar, SafeAreaView} from 'react-native';
+import {StatusBar, SafeAreaView, View} from 'react-native';
 import {RootStackParamList} from '../navigations';
 import {theme} from '../constants';
-import {Header, Typography} from '../components';
+import {
+  Button,
+  IconButton,
+  Main,
+  Header,
+  Typography,
+  Input,
+  Field,
+  DatePicker,
+} from '../components';
 
 export interface AddTasksProps {
   navigation: StackNavigationProp<RootStackParamList, 'AddTasks'>;
@@ -18,10 +27,24 @@ export const AddTasksScreen: React.FC<AddTasksProps> = () => {
         barStyle="dark-content"
         backgroundColor={theme.colors.commons.white}
       />
-      <Header>
-        <Typography>Add Tasks</Typography>
-      </Header>
-      <Text>AddTasksScreen</Text>
+      <Header
+        left={
+          <IconButton size={18} iconName="chevron-back" onPress={() => {}} />
+        }
+        center={<Typography isBold>Add Task</Typography>}
+      />
+
+      <Main>
+        <View style={{flex: 1}}>
+          <Field label="Title">
+            <Input placeholder="Design team meeting" />
+          </Field>
+          <Field label="Deadline" style={{marginTop: theme.padding}}>
+            <DatePicker placeholder="2021-02-28" />
+          </Field>
+        </View>
+        <Button title="Create a Task" onPress={() => {}} />
+      </Main>
     </SafeAreaView>
   );
 };

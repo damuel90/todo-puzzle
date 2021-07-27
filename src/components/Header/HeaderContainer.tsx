@@ -6,7 +6,7 @@ export const HeaderContainer = styled.View`
   border-bottom-width: 1px;
   border-color: rgb(226, 226, 226);
   border-style: solid;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   padding-left: ${theme.padding}px;

@@ -9,9 +9,11 @@ export const theme = {
     },
   },
   padding: 20,
+  borderRadius: 15,
   font: {
     size: {
       h1: 18,
+      h2: 16,
     },
   },
 };

@@ -22,6 +22,11 @@
 1) In your newly cloned folder, run the command `yarn install`.
 3) Run the `npx react-native run-android` command to run the app on a device (physical or emulator) connected to your development environment.
 
+# Demo
+
+- Physical device (Alcatel 5059R)
+
+[![Alt text](https://img.youtube.com/vi/6_8U2RNT5mg/0.jpg)](https://www.youtube.com/watch?v=6_8U2RNT5mg)
 
 # License
 

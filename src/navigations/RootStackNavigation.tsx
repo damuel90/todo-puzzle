@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen, AddTasksScreen} from '../screens';
-import {taskActions} from '../store';
+import {taskActions, useAppDispatch} from '../store';
+import {getTasks} from '../services/database';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -11,11 +12,13 @@ export type RootStackParamList = {
 const RootStack = createStackNavigator<RootStackParamList>();
 
 export const RootStackNavigation = () => {
-  const {getTasks} = taskActions;
+  const {initTasks} = taskActions;
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getTasks();
-  }, [getTasks]);
+    const tasks = getTasks();
+    dispatch(initTasks(tasks));
+  }, [initTasks, dispatch]);
 
   return (
     <RootStack.Navigator initialRouteName="AddTasks" headerMode={'none'}>

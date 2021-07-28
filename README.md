@@ -24,8 +24,10 @@
 
 # Demo
 
-- Physical device (Alcatel 5059R)
+- Emulated device (high-end)
+[![Alt text](https://img.youtube.com/vi/rDEYJSGTSjQ/0.jpg)](https://www.youtube.com/watch?v=rDEYJSGTSjQ)
 
+- Physical device (Alcatel 5059R)
 [![Alt text](https://img.youtube.com/vi/6_8U2RNT5mg/0.jpg)](https://www.youtube.com/watch?v=6_8U2RNT5mg)
 
 # License

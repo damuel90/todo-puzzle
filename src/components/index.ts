@@ -8,3 +8,4 @@ export * from './Field';
 export * from './DatePicker';
 export * from './TimePicker';
 export * from './Select';
+export * from './CustomToastProvider';

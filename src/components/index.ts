@@ -9,3 +9,5 @@ export * from './DatePicker';
 export * from './TimePicker';
 export * from './Select';
 export * from './CustomToastProvider';
+export * from './Badge';
+export * from './TaskItem';

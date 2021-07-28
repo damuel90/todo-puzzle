@@ -2,6 +2,7 @@ import 'react-native-get-random-values';
 import {db} from '../db';
 import {Task} from '../schemas/taskSchema';
 import {v4 as uuidv4} from 'uuid';
+import Realm from 'realm';
 
 export const createTask = (task: Omit<Task, 'id' | 'completed'>): Task => {
   let createdTask!: Task;
@@ -23,11 +24,11 @@ export const getTaskById = (id: string) => {
   if (tasks.length === 0) {
     return null;
   }
-  const task = tasks.filtered(`id: ${id}`);
-  if (task.length === 0) {
+  const task = tasks.find(item => item.id === id);
+  if (!task) {
     return null;
   }
-  return task[0] as Task;
+  return task.toJSON() as Task;
 };
 
 export const updatedTaskById = (
@@ -38,7 +39,7 @@ export const updatedTaskById = (
   db.write(() => {
     let task = getTaskById(id);
     if (task) {
-      task = {...task, ...data};
+      db.create<Task>('Task', {...task, ...data}, Realm.UpdateMode.Modified);
       updated = true;
     }
   });

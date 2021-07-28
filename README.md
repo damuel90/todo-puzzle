@@ -1,12 +1,12 @@
 ## To-Do Puzzle App
 
-> To-Do Puzzle App is a mobile application for task management created with react native, redux for state and realm management for data permanence.
+> To-Do Puzzle App is a mobile application for task management created with react native, redux for state management and realm for data permanence.
 
 # Features
 
-- view all task (completed and no completed)
-- create tasks
-- switch task to completed
+- View all task (completed and no completed)
+- Create tasks
+- Switch task to completed
 
 # Requirements
 
@@ -17,11 +17,11 @@
 
 # Instructions
 
-```
-1) clone the repository on your pc with the command `git clone`.
-1) in your newly cloned folder, run the command `yarn install`.
-3) run the `npx react-native run-android` command to run the app on a device (physical or emulator) connected to your development environment.
-```
+
+1) Clone the repository on your pc with the command `git clone`.
+1) In your newly cloned folder, run the command `yarn install`.
+3) Run the `npx react-native run-android` command to run the app on a device (physical or emulator) connected to your development environment.
+
 
 # License
 

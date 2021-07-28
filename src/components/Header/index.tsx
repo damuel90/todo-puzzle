@@ -12,13 +12,18 @@ export interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({left, center, right}) => {
   return (
     <HeaderContainer>
-      {left && <View>{left}</View>}
+      {left && <View style={{flexDirection: 'row'}}>{left}</View>}
       {center && (
-        <View style={{flex: 1, paddingHorizontal: theme.padding}}>
+        <View
+          style={{
+            flex: 1,
+            paddingLeft: left ? theme.padding : 0,
+            paddingRight: right ? theme.padding : 0,
+          }}>
           {center}
         </View>
       )}
-      {right && <View>{right}</View>}
+      {right && <View style={{flexDirection: 'row'}}>{right}</View>}
     </HeaderContainer>
   );
 };

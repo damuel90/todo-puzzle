@@ -12,7 +12,7 @@ export interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({title, onPress, style}) => {
   return (
-    <ButtonContainer style={style} activeOpacity={0.7} onPress={onPress}>
+    <ButtonContainer style={style} activeOpacity={0.5} onPress={onPress}>
       <Typography
         isBold
         color={theme.colors.commons.white}

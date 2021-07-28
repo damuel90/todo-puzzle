@@ -21,7 +21,7 @@ export const RootStackNavigation = () => {
   }, [initTasks, dispatch]);
 
   return (
-    <RootStack.Navigator initialRouteName="AddTasks" headerMode={'none'}>
+    <RootStack.Navigator initialRouteName="Home" headerMode={'none'}>
       <RootStack.Screen name="Home" component={HomeScreen} />
       <RootStack.Screen name="AddTasks" component={AddTasksScreen} />
     </RootStack.Navigator>

@@ -23,7 +23,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
   return (
     <IconButtonContainer
       style={style}
-      activeOpacity={0.7}
+      activeOpacity={0.5}
       {...{bgColor, size}}
       onPress={onPress}>
       <Iconicons name={iconName} size={size} style={{color}} />

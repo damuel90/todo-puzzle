@@ -3,6 +3,7 @@ import {theme} from '../../constants';
 
 export const Input = styled.TextInput`
   background-color: ${theme.colors.background};
+  height: ${theme.buttonHeight}px;
   border-radius: ${theme.borderRadius / 2}px;
   padding-left: ${theme.padding}px;
   padding-right: ${theme.padding}px;

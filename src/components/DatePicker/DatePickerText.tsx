@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {theme} from '../../constants';
 
 interface DatePickerTextProps {
   isPlaceholder: boolean;
@@ -7,5 +8,5 @@ interface DatePickerTextProps {
 export const DatePickerText = styled.Text<DatePickerTextProps>`
   font-size: 14px;
   color: ${props =>
-    props.isPlaceholder ? 'rgb(140, 140, 140)' : 'rgb(32, 32, 32)'};
+    props.isPlaceholder ? theme.colors.placeholder : theme.colors.textInput};
 `;

@@ -3,7 +3,7 @@ import {theme} from '../../constants';
 
 export const DatePickerButton = styled.TouchableOpacity`
   background-color: ${theme.colors.background};
-  height: 50px;
+  height: ${theme.buttonHeight}px;
   border-radius: ${theme.borderRadius / 2}px;
   flex-direction: row;
   justify-content: space-between;

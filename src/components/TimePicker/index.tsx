@@ -5,11 +5,14 @@ import {DatePickerButton} from '../DatePicker/DatePickerButton';
 import {DatePickerText} from '../DatePicker/DatePickerText';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {format} from 'date-fns';
+import {theme} from '../../constants';
+
 export interface TimePickerProps {
   placeholder?: string;
   value?: Date;
   onChange?: (value: Date) => void;
 }
+
 export const TimePicker = ({
   placeholder = '',
   value,
@@ -36,7 +39,11 @@ export const TimePicker = ({
         <DatePickerText isPlaceholder={!value}>
           {value ? format(value, 'K:mm bbb') : placeholder}
         </DatePickerText>
-        <Ionicons name="time-outline" size={20} color="rgb(140, 140, 140)" />
+        <Ionicons
+          name="time-outline"
+          size={20}
+          color={theme.colors.placeholder}
+        />
       </DatePickerButton>
       <DateTimePickerModal
         isVisible={visible}

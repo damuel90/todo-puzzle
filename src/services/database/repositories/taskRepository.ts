@@ -1,18 +1,21 @@
+import 'react-native-get-random-values';
 import {db} from '../db';
 import {Task} from '../schemas/taskSchema';
 import {v4 as uuidv4} from 'uuid';
 
 export const createTask = (task: Omit<Task, 'id' | 'completed'>): Task => {
   let createdTask!: Task;
+  const id = uuidv4();
   db.write(() => {
-    const id = uuidv4();
-    createdTask = db.create<Task>('Task', {id, completed: false, ...task});
+    createdTask = db
+      .create<Task>('Task', {id, completed: false, ...task})
+      .toJSON() as Task;
   });
   return createdTask;
 };
 
 export const getTasks = (): Task[] => {
-  return db.objects<Task[]>('Task') as unknown as Task[];
+  return db.objects<Task[]>('Task').toJSON() as Task[];
 };
 
 export const getTaskById = (id: string) => {
